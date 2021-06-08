@@ -32,6 +32,7 @@ class main(QtWidgets.QMainWindow):
         self.ui.pushButton_disconnect.clicked.connect(self.disconnect)
         self.ui.pushButton_start.clicked.connect(self.start)
         self.ui.pushButton_stop.clicked.connect(self.stop)
+        self.ui.pushButton_refresh.clicked.connect(self.get_serial_ports)
 
 
     def get_serial_ports(self):
@@ -59,6 +60,7 @@ class main(QtWidgets.QMainWindow):
                 result.append(port)
             except (OSError, serial.SerialException):
                     pass
+        self.ui.comboBox_ports.clear()
         self.ui.comboBox_ports.addItems(result)
 
 
@@ -75,17 +77,10 @@ class main(QtWidgets.QMainWindow):
                 self.serial.bytesize = serial.EIGHTBITS
                 self.serial.timeout = 1
                 self.serial.open()
-                #self.serial.flushInput()
-
-                # This is a thread that always runs and listens to commands from the Arduino
-                #self.global_listener_thread = Thread(self.listening)
-                #self.global_listener_thread.finished.connect(lambda:self.self.thread_finished(self.global_listener_thread))
-                #self.global_listener_thread.start()
 
 
                 self.ui.pushButton_disconnect.setEnabled(True)
                 self.ui.pushButton_start.setEnabled(True)
-
                 self.ui.pushButton_connect.setEnabled(False)
                 time.sleep(3)
                 print("Board has been connected")
