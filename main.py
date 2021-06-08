@@ -28,17 +28,11 @@ class main(QtWidgets.QMainWindow):
 
 
     def connect_all_gui_components(self):
-        self.ui.comboBox_ports.currentIndexChanged.connect(self.set_port)
-
         self.ui.pushButton_connect.clicked.connect(self.connect)
         self.ui.pushButton_disconnect.clicked.connect(self.disconnect)
         self.ui.pushButton_start.clicked.connect(self.start)
         self.ui.pushButton_stop.clicked.connect(self.stop)
 
-
-    # Set the port that is selected from the dropdown menu
-    def set_port(self):
-        self.port = self.ui.comboBox_ports.currentText()
 
     def get_serial_ports(self):
         """ Lists serial port names
@@ -48,7 +42,7 @@ class main(QtWidgets.QMainWindow):
          A list of the serial ports available on the system
          """
         if sys.platform.startswith('win'):
-            ports = ['COM%s' % (i + 1) for i in range(256)]
+            ports = [r'\\.\COM%s' % (i + 1) for i in range(256)]
         elif sys.platform.startswith('linux') or sys.platform.startswith('cygwin'):
             # this excludes your current terminal "/dev/tty"
             ports = glob.glob('/dev/tty[A-Za-z]*')
@@ -71,10 +65,10 @@ class main(QtWidgets.QMainWindow):
         # Connect to the Arduino board
     def connect(self):
         try:
-            port_declared = self.port in vars()
+            port_declared = self.ui.comboBox_ports.currentText()
             try:
                 self.serial = serial.Serial()
-                self.serial.port = self.port
+                self.serial.port = port_declared
                 self.serial.baudrate = 230400
                 self.serial.parity = serial.PARITY_NONE
                 self.serial.stopbits = serial.STOPBITS_ONE
