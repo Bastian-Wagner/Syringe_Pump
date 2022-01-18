@@ -3,7 +3,8 @@ GUI was coded in python with PyQt5
 PyQt5 can be installed with the comand...
 > pip install PyQt5
 
-
+PySerial is used for the USB communication...
+> pip install pyserial
 
 -----------------------------------------------Dark mode notes-----------------------------------------
 BreezeStyleSheets:
