@@ -71,7 +71,7 @@ class main(QtWidgets.QMainWindow):
             try:
                 self.serial = serial.Serial()
                 self.serial.port = port_declared
-                self.serial.baudrate = 230400
+                self.serial.baudrate = 115200
                 self.serial.parity = serial.PARITY_NONE
                 self.serial.stopbits = serial.STOPBITS_ONE
                 self.serial.bytesize = serial.EIGHTBITS
@@ -112,6 +112,7 @@ class main(QtWidgets.QMainWindow):
             self.syringe_1 = self.ui.comboBox_syringe_1.currentIndex()
             steps_per_second_1 = self.calc_steps_per_second(self.p1_velocity, self.syringe_1)
             total_steps_1 = self.calc_total_steps(self.p1_volume, self.syringe_1)
+            total_steps_1 = round(total_steps_1, 2)
             if steps_per_second_1 < 0:
                 total_steps_1 = -total_steps_1
         else:
@@ -124,6 +125,7 @@ class main(QtWidgets.QMainWindow):
             self.syringe_2 = self.ui.comboBox_syringe_2.currentIndex()
             steps_per_second_2 = self.calc_steps_per_second(self.p2_velocity, self.syringe_2)
             total_steps_2 = self.calc_total_steps(self.p2_volume, self.syringe_2)
+            total_steps_2 = round(total_steps_2, 2)
             if steps_per_second_2 < 0:
                 total_steps_2 = -total_steps_2
         else:
@@ -136,6 +138,7 @@ class main(QtWidgets.QMainWindow):
             self.syringe_3 = self.ui.comboBox_syringe_3.currentIndex()
             steps_per_second = self.calc_steps_per_second(self.p3_velocity, self.syringe_3)
             total_steps = self.calc_total_steps(self.p3_volume, self.syringe_3)
+            total_steps = round(total_steps, 2)
             if steps_per_second_3 < 0:
                 total_steps_3 = -total_steps_3
         else:
@@ -159,9 +162,9 @@ class main(QtWidgets.QMainWindow):
 
     def calc_steps_per_second(self, velocity, syringe_index):
         self.microsteps = self.ui.comboBox_microsteps.currentText()
-        # syringe_parameters = steps needed per uL when microstepping=1
+        # syringe_parameters = steps needed per µL when microstepping=1
         # BD 1mL = 14.53, 3mL, 5mL, 10mL, 15mL
-        syringe_parameters = [4.47, 2.7, 1.35, 0.9]
+        syringe_parameters = [self.ui.doubleSpinBox_3mL.value(), self.ui.doubleSpinBox_5mL.value(), self.ui.doubleSpinBox_10mL.value(), self.ui.doubleSpinBox_15mL.value()]
         volume_per_second = float(velocity)/60
         steps_per_second = round(volume_per_second*syringe_parameters[syringe_index]*int(self.microsteps))
         print(steps_per_second)
