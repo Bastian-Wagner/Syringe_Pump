@@ -1,3 +1,8 @@
+Syringe Pump
+
+![Syringe pump logo](https://raw.githubusercontent.com/BastianWagner/Syringe_pump/master/Syringe_pump_GUI_1.png)
+
+
 GUI was coded in python with PyQt5
 
 PyQt5 can be installed with the comand...
