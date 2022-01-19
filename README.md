@@ -1,5 +1,11 @@
 ## Syringe Pump
 
+You can find here:
+- Arduino code which has to be uploaded to the microcontroller "Arduino Nano BLE 33". This code enables communication between the Trinamic stepper drivers and the computer
+- PyQT5 code for the Syringe Pump app that is running on the personal comupter enables direct control over the pump via a garaphical user interface
+
+Graphical user interface of the Syringe Pump app:
+
 ![Syringe pump logo](https://raw.githubusercontent.com/BastianWagner/Syringe_Pump/master/Syringe_pump_GUI_1.png)
 
 
