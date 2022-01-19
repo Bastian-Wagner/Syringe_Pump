@@ -3,7 +3,7 @@ Syringe Pump
 ![Syringe pump logo](https://raw.githubusercontent.com/BastianWagner/Syringe_Pump/master/Syringe_pump_GUI_1.png)
 
 
-GUI was coded in python with PyQt5
+GUI was coded in python with PyQt5 and is using the Pyserial library for communication:
 
 PyQt5 can be installed with the comand...
 > pip install PyQt5
