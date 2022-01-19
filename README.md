@@ -6,13 +6,18 @@ You can find here:
 
 Graphical user interface of the Syringe Pump app:
 
-![Syringe pump logo](https://raw.githubusercontent.com/BastianWagner/Syringe_Pump/master/Syringe_pump_GUI_1.png)
+![Syringe pump GUI logo](https://raw.githubusercontent.com/BastianWagner/Syringe_Pump/master/Syringe_pump_GUI_1.png)
 
 
 GUI was coded in python with PyQt5:
 
 PyQt5 has to be installed on MAC with the terminal command...
 > pip install PyQt5
+
+
+Syringe Pump Setup with microcontroller board:
+
+![Syringe pump setup logo](https://raw.githubusercontent.com/BastianWagner/Syringe_Pump/master/Syringe_pump.png)
 
 
 -----------------------------------------------Dark mode notes-----------------------------------------
