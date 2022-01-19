@@ -1,6 +1,6 @@
 Syringe Pump
 
-![Syringe pump logo](https://raw.githubusercontent.com/BastianWagner/Syringe_pump/master/Syringe_pump_GUI_1.png)
+![Syringe pump logo](https://raw.githubusercontent.com/BastianWagner/Syringe_Pump/master/Syringe_pump_GUI_1.png)
 
 
 GUI was coded in python with PyQt5
