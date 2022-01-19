@@ -1,4 +1,4 @@
-#Syringe Pump
+## Syringe Pump
 
 ![Syringe pump logo](https://raw.githubusercontent.com/BastianWagner/Syringe_Pump/master/Syringe_pump_GUI_1.png)
 
