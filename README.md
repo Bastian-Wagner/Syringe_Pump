@@ -9,13 +9,11 @@ Graphical user interface of the Syringe Pump app:
 ![Syringe pump logo](https://raw.githubusercontent.com/BastianWagner/Syringe_Pump/master/Syringe_pump_GUI_1.png)
 
 
-GUI was coded in python with PyQt5 and is using the Pyserial library for communication:
+GUI was coded in python with PyQt5:
 
-PyQt5 can be installed with the comand...
+PyQt5 has to be installed on MAC with the terminal command...
 > pip install PyQt5
 
-PySerial is used for the USB communication...
-> pip install pyserial
 
 -----------------------------------------------Dark mode notes-----------------------------------------
 BreezeStyleSheets:
