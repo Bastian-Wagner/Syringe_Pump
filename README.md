@@ -47,7 +47,7 @@ Py2app:
 py2app is a Python setuptools command which will allow you to make standalone Mac OS X application bundles and plugins from Python scripts.
 NOTE: py2app must be used on OSX to build applications, it cannot create Mac applications on other platforms.
 
-PyQt5 can be installed with the comand...
+py2app can be installed with the comand...
 > pip3 install py2app
 
 Folder:
@@ -60,6 +60,8 @@ File:
 
 To build app use following comand...
 > python setup.py py2app
+
+
 ---------------------------------------------------------------------------------------------------- <br> 
 
 
