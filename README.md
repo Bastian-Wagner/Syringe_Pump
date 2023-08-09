@@ -36,7 +36,8 @@ Files:
 
 To compile the stylesheet for use with PyQt5, compile with the following command...
 > pyrcc5 breeze.qrc -o breeze_resources.py
----------------------------------------------------------------------------------------------------- <br>
+
+----------------------------------------------------------------------------------------------------
 
 
 
